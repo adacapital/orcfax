@@ -1,0 +1,12 @@
+# Ignore all files with the following extensions
+*.addr
+*.skey
+*.vkey
+*.hash
+
+*.whl
+gofer
+
+# Ignore the python 3 virtual environment
+collector/orcfax-venv/
+
