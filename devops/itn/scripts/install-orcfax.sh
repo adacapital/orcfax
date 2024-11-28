@@ -66,8 +66,6 @@ chmod +x gofer
 pm2 start bash --name "orcfax-collector" --cron "* * * * *" -- -c "source /home/cardano/data/orcfax/collector/node.env && source /home/cardano/data/orcfax/collector/orcfax-venv/bin/activate && collector-node --feeds \$COLLECTOR_PATH/cer-feeds.json 2>&1"
 # pm2 start bash --name "orcfax-collector" --cron "* * * * *" -- -c "source /home/cardano/data/orcfax/collector/node.env && source /home/cardano/data/orcfax/collector/orcfax-venv/bin/activate && collector-node --feeds /home/cardano/data/orcfax/collector/cer-feeds.json 2>&1"
 
-
+pm2 save
 
 echo "Installation and setup completed successfully!"
-
-# source node.env && source orcfax-venv/bin/activate && collector-node --feeds cer-feeds.json
