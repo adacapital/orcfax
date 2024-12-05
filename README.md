@@ -41,6 +41,13 @@ The `node.env` file will be automatically generated. Edit this file to provide n
 ### 4. Schedule the Collector-Node with PM2
 Start and schedule the collector-node process using PM2. Save the PM2 configuration to ensure it restarts on system reboots.
 
+
+```bash
+pm2 start bash --name "orcfax-collector" --cron "* * * * *" -- -c "source \$COLLECTOR_PATH/node.env && source \$COLLECTOR_PATH/orcfax-venv/bin/activate && collector-node --feeds \$COLLECTOR_PATH/cer-feeds.json 2>&1"
+
+pm2 save
+pm2 startup
+```
 ### 5. Verify the Process
 Use PM2 to check the status and logs of the `collector-node` process.
 
@@ -52,7 +59,10 @@ pm2 logs orcfax-collector
 
 ## Logs and Monitoring
 - Logs are managed by PM2 and stored in the PM2 logs directory.
-- Optionally, system logs can be viewed if the `logger` command is used.
+
+```bash
+pm2 logs orcfax-collector
+```
 
 ## Contributions
 Community contributions are welcome! If you encounter issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
