@@ -26,7 +26,7 @@ cat <<EOL > "$NODE_ENV_FILE"
 
 ## Variables used in ITN Phase 1
 export ORCFAX_VALIDATOR=
-export NODE_IDENTITY_LOC=/tmp/.node-identity.json
+export NODE_IDENTITY_LOC=/home/cardano/data/orcfax/devops/keys/.node-identity.json
 export NODE_SIGNING_KEY=
 export GOFER=$COLLECTOR_PATH/gofer
 

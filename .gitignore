@@ -3,6 +3,7 @@
 *.skey
 *.vkey
 *.hash
+.node-identity.json
 
 *.whl
 gofer
